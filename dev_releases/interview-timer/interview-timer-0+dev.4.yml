@@ -1,0 +1,16 @@
+---
+packages:
+- name: timer_pkg
+  version: 6ec363bd24778b27299bd6046fa9d1e09dbcaf0c
+  fingerprint: 6ec363bd24778b27299bd6046fa9d1e09dbcaf0c
+  sha1: 1faaacf17d2c35f4ae243aeaf98995a31c18e569
+  dependencies: []
+jobs:
+- name: ticker
+  version: adc4b4782d0ef71215476753dbb3c03f64f85406
+  fingerprint: adc4b4782d0ef71215476753dbb3c03f64f85406
+  sha1: 2aa49731e406a740013e3858d1a5352d69dffe99
+commit_hash: '00000000'
+uncommitted_changes: false
+name: interview-timer
+version: 0+dev.4

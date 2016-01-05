@@ -1,0 +1,5 @@
+check process ticker
+  with pidfile /var/vcap/sys/run/ticker/pid
+  start program "/var/vcap/jobs/ticker/bin/ctl start"
+  stop program "/var/vcap/jobs/ticker/bin/ctl stop"
+  group vcap

@@ -1,0 +1,44 @@
+name: interview-timer
+director_uuid: de7e613b-0f3a-47f8-8e94-cbd81af62746
+
+releases:
+- name: interview-timer
+  version: latest
+
+compilation:
+  workers: 2
+  network: default
+  reuse_compilation_vms: true
+  cloud_properties:
+    name: random
+
+update:
+  canaries: 1
+  canary_watch_time: 30000-240000
+  update_watch_time: 30000-600000
+  max_in_flight: 3
+
+resource_pools:
+- name: common-resource-pool
+  network: default
+  size: 3
+  stemcell:
+    name: bosh-warden-boshlite-ubuntu-trusty-go_agent
+    version: 389
+  cloud_properties:
+    name: random
+
+networks:
+- name: default
+  type: dynamic
+  cloud_properties:
+    name: random
+
+jobs:
+- name: ticker
+  template: ticker
+  instances: 1
+  resource_pool: common-resource-pool
+  persistent_disk: 10240
+  networks:
+    - name: default

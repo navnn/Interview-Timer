@@ -1,0 +1,8 @@
+# abort script on any command that exits with a non zero value
+set -e -x
+
+unzip interview-timer-master.zip
+
+cd interview-timer-master
+cp -a . ${BOSH_INSTALL_TARGET}/interview-timer-master
+
