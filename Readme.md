@@ -33,29 +33,28 @@ Task 77 done
 +-----------------+--------------------+----------------------+------------+
 | Job/index       | State              | Resource Pool        | IPs        |
 +-----------------+--------------------+----------------------+------------+
-| unknown/unknown | unresponsive agent |                      |            |
-| unknown/unknown | unresponsive agent |                      |            |
 | ticker/0        | running            | common-resource-pool | 10.254.0.2 |
 +-----------------+--------------------+----------------------+------------+
 
 VMs total: 3
 ```
 
-SSH into the IP address of the ticker job
+SSH into the IP of the ticker job
 ```
 ssh vcap@10.254.0.2
 cd /var/vcap/sys/log/ticker
 ```
 
-default password for vcap is c1oudc0w
-tailing the ticker.stdout.log should give you and output like this:
+default password for vcap is c1oudc0w 
+
+tailing the ticker.stdout.log should give you an output like this:
 ```
 Hello world from 2016-01-09 15:10:16.849328986 +0000 UTC
 Hello world from 2016-01-09 15:10:17.849503928 +0000 UTC
 Hello world from 2016-01-09 15:10:18.848579018 +0000 UTC
 ```
 
-and tailing the ticker.stderr.log should give you and output like this:
+and tailing the ticker.stderr.log should give you an output like this:
 ```
 ERROR at 2016-01-09 15:11:46.849286189 +0000 UTC
 ERROR at 2016-01-09 15:11:47.849778927 +0000 UTC
